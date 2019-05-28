@@ -8,19 +8,41 @@ import AboutScreen from "../screens/About";
 import ScheduleScreen from "../screens/Schedule";
 import SessionScreen from "../screens/Session";
 import FavesScreen from "../screens/Faves";
+import { sharedNavigationOptions } from "./config";
 
-const AboutStack = createStackNavigator({
-  About: AboutScreen
-});
-const ScheduleStack = createStackNavigator({
-  Schedule: ScheduleScreen,
-  Session: SessionScreen
-});
+const AboutStack = createStackNavigator(
+  {
+    About: AboutScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+);
+const ScheduleStack = createStackNavigator(
+  {
+    Schedule: ScheduleScreen,
+    Session: SessionScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+);
 
-const FavesStack = createStackNavigator({
-  Faves: FavesScreen,
-  Session: SessionScreen
-});
+const FavesStack = createStackNavigator(
+  {
+    Faves: FavesScreen,
+    Session: SessionScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+);
 
 export default createBottomTabNavigator(
   {
@@ -37,7 +59,7 @@ export default createBottomTabNavigator(
         if (routeName === "Schedule") {
           iconName = `ios-calendar`;
         } else if (routeName === "About") {
-          iconName = `ios-information-circle${focused ? "" : "-outline"}`;
+          iconName = `ios-information-circle`;
         } else if (routeName === "Faves") {
           iconName = `ios-heart`;
         }
