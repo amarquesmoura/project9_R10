@@ -1,4 +1,5 @@
 import React from "react";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import {
   createStackNavigator,
   createBottomTabNavigator
@@ -21,8 +22,40 @@ const FavesStack = createStackNavigator({
   Session: SessionScreen
 });
 
-export default createBottomTabNavigator({
-  Schedule: ScheduleStack,
-  Faves: FavesStack,
-  About: AboutStack
-});
+export default createBottomTabNavigator(
+  {
+    Schedule: ScheduleStack,
+    Faves: FavesStack,
+    About: AboutStack
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === "Schedule") {
+          iconName = `ios-calendar`;
+        } else if (routeName === "About") {
+          iconName = `ios-information-circle${focused ? "" : "-outline"}`;
+        } else if (routeName === "Faves") {
+          iconName = `ios-heart`;
+        }
+
+        // You can return any component that you like here!
+        return <IconComponent name={iconName} size={25} color={tintColor} />;
+      }
+    }),
+    tabBarOptions: {
+      activeTintColor: "white",
+      inactiveTintColor: "#999",
+      labelStyle: {
+        fontSize: 10,
+        fontFamily: "Montserrat"
+      },
+      style: {
+        backgroundColor: "black"
+      }
+    }
+  }
+);

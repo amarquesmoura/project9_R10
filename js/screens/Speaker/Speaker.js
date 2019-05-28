@@ -1,10 +1,13 @@
-import React, { Component } from "react";
-import Speaker from "./Speaker";
+import React, { Component, Fragment } from "react";
+import { Text, View } from "react-native";
+import { styles } from "./styles";
 
-class SpeakerContainer extends Component {
-  render() {
-    return <Speaker />;
-  }
-}
+const Speaker = data => {
+  return (
+    <View style={styles.container}>
+      <Text>This is the Speaker screen...</Text>
+    </View>
+  );
+};
 
-export default SpeakerContainer;
+export default Speaker;
