@@ -5,13 +5,16 @@ import gql from "graphql-tag";
 import { Text } from "react-native";
 
 class AboutContainer extends Component {
+  static navigationOptions = {
+    title: "About"
+  };
   render() {
     return (
       <Query query={GET_CONDUCT_ITEMS}>
         {({ loading, data }) => {
           if (loading || !data) return <Text>Loading...</Text>; // replace by Loader component
           console.log(data);
-          return <About />;
+          return <About data={data} />;
         }}
       </Query>
     );
