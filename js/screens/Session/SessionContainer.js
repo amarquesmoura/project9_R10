@@ -4,6 +4,7 @@ import { Query } from "react-apollo";
 import { Text } from "react-native";
 import { formatSessionData } from "../../helpers";
 import gql from "graphql-tag";
+import FavesContext from "../../context/FavesContext";
 
 class SessionContainer extends Component {
   static navigationOptions = {
@@ -12,20 +13,24 @@ class SessionContainer extends Component {
   render() {
     const id = this.props.navigation.getParam("id");
     return (
-      <Query variables={{ id }} query={GET_SESSION_DETAILS}>
-        {({ loading, data }) => {
-          if (loading || !data) return <Text>Loading...</Text>; // replace by Loader component
-          return (
-            <Session
-              session={data.session}
-              navigation={this.props.navigation}
-              faveIds={faveIds}
-              addFaveSession={addFaveSession}
-              removeFaveSession={removeFaveSession}
-            />
-          );
-        }}
-      </Query>
+      <FavesContext.Consumer>
+        {({ faveIds, addFaveSession, removeFaveSession }) => (
+          <Query variables={{ id }} query={GET_SESSION_DETAILS}>
+            {({ loading, data }) => {
+              if (loading || !data) return <Text>Loading...</Text>; // replace by Loader component
+              return (
+                <Session
+                  session={data.Session}
+                  navigation={this.props.navigation}
+                  faveIds={faveIds}
+                  addFaveSession={addFaveSession}
+                  removeFaveSession={removeFaveSession}
+                />
+              );
+            }}
+          </Query>
+        )}
+      </FavesContext.Consumer>
     );
   }
 }

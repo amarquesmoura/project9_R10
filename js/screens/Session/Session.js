@@ -16,9 +16,18 @@ const Session = ({
   addFaveSession,
   removeFaveSession
 }) => {
+  console.log("Session", session);
   return (
     <View style={styles.container}>
       <Text>This is the Session screen...</Text>
+      <Text>{session.location}</Text>
+      {faveIds.includes(session.id) ? (
+        <Ionicons name={heart} size={20} color="red" />
+      ) : null}
+      <Text>{session.title}</Text>
+      <Text>{moment(session.startTime).format("h:mm a")}</Text>
+      <Text>{session.description}</Text>
+      <Text>{session.speaker.name}</Text>
     </View>
   );
 };
