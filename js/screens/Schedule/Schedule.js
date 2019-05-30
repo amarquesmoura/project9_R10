@@ -3,11 +3,10 @@ import { Text, View } from "react-native";
 import { styles } from "./styles";
 import SessionList from "../../components/SessionList";
 
-const Schedule = ({ sessions }) => {
+const Schedule = ({ sessions, faveIds }) => {
   return (
     <View style={styles.container}>
-      <Text>This is the Schedule screen...</Text>
-      <SessionList sessions={sessions} />
+      <SessionList sessions={sessions} faveIds={faveIds} />
     </View>
   );
 };

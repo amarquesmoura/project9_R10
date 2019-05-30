@@ -9,7 +9,13 @@ import {
 import { styles } from "./styles";
 import moment from "moment";
 
-const Session = ({ data, navigation }) => {
+const Session = ({
+  session,
+  navigation,
+  faveIds,
+  addFaveSession,
+  removeFaveSession
+}) => {
   return (
     <View style={styles.container}>
       <Text>This is the Session screen...</Text>

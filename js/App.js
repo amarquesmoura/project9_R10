@@ -8,9 +8,9 @@ export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        {/* <FavesProvider> */}
-        <RootStackNavigator />
-        {/* </FavesProvider> */}
+        <FavesProvider>
+          <RootStackNavigator />
+        </FavesProvider>
       </ApolloProvider>
     );
   }

@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import Schedule from "./Schedule";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-import { FavesContext } from "../../context/FavesContext";
+import FavesContext from "../../context/FavesContext";
 
 class ScheduleContainer extends Component {
   static navigationOptions = {
@@ -11,16 +11,20 @@ class ScheduleContainer extends Component {
   };
   render() {
     return (
-      // <FavesContext.Consumer>
-      <Query query={GET_SESSION_ITEMS}>
-        {({ loading, error, data }) => {
-          if (loading || !data) return <Text>Loading...</Text>; // replace by Loader component
-          if (data) {
-            return <Schedule sessions={data.allSessions} />;
-          }
-        }}
-      </Query>
-      // </FavesContext.Consumer>
+      <FavesContext.Consumer>
+        {({ faveIds }) => (
+          <Query query={GET_SESSION_ITEMS}>
+            {({ loading, error, data }) => {
+              if (loading || !data) return <Text>Loading...</Text>; // replace by Loader component
+              if (data) {
+                return (
+                  <Schedule sessions={data.allSessions} faveIds={faveIds} />
+                );
+              }
+            }}
+          </Query>
+        )}
+      </FavesContext.Consumer>
     );
   }
 }

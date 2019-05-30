@@ -19,7 +19,6 @@ class FavesProvider extends Component {
     try {
       const faves = await queryFaves();
       const faveIds = faves.map(fave => fave[0]);
-      console.log(faves);
       this.setState({ faveIds });
     } catch (e) {
       throw Error(e);
@@ -46,7 +45,6 @@ class FavesProvider extends Component {
     }
   };
   render() {
-    console.log(this.state.faveIds);
     return (
       <FavesContext.Provider
         value={{

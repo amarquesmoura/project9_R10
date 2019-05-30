@@ -19,9 +19,9 @@ class SessionContainer extends Component {
             <Session
               session={data.session}
               navigation={this.props.navigation}
-              //faveIs={faveIds}
-              //addFaveSession={addFaveSession}
-              //removeFaveSession={removeFaveSession}
+              faveIds={faveIds}
+              addFaveSession={addFaveSession}
+              removeFaveSession={removeFaveSession}
             />
           );
         }}

@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Faves from "./Faves";
+import FavesContext from "../../context/FavesContext";
 
 class FavesContainer extends Component {
   static navigationOptions = {
     title: "Faves"
   };
   render() {
-    return <Faves />;
+    return;
+    <FavesContext.Consumer>{({ faveIds }) => <Faves />}</FavesContext.Consumer>;
   }
 }
 

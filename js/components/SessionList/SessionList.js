@@ -5,7 +5,7 @@ import { styles } from "./styles";
 import SessionListItem from "../SessionListItem";
 import { formatSessionData } from "../../helpers";
 
-const SessionList = ({ sessions }) => {
+const SessionList = ({ sessions, faveIds }) => {
   return (
     <View>
       <SectionList
@@ -14,7 +14,9 @@ const SessionList = ({ sessions }) => {
             {moment(title).format("h:mm a")}
           </Text>
         )}
-        renderItem={({ item }) => <SessionListItem item={item} />}
+        renderItem={({ item }) => (
+          <SessionListItem item={item} faveIds={faveIds} />
+        )}
         sections={formatSessionData(sessions)}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={() => (
