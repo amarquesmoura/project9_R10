@@ -9,6 +9,7 @@ import ScheduleScreen from "../screens/Schedule";
 import SessionScreen from "../screens/Session";
 import FavesScreen from "../screens/Faves";
 import { sharedNavigationOptions } from "./config";
+import theme from "../config/styles";
 
 const AboutStack = createStackNavigator(
   {
@@ -73,7 +74,7 @@ export default createBottomTabNavigator(
       inactiveTintColor: "#999",
       labelStyle: {
         fontSize: 10,
-        fontFamily: "Montserrat"
+        fontFamily: theme.themeFontFamily
       },
       style: {
         backgroundColor: "black"
