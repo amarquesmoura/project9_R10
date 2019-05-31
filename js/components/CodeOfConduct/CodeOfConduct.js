@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { LayoutAnimation, Text, TouchableOpacity, View } from "react-native";
+import {
+  Animated,
+  LayoutAnimation,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
 import { styles } from "./styles";
 import PropTypes from "prop-types";
 
@@ -7,12 +13,24 @@ class CodeOfConductItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      rotate: new Animated.Value(0)
     };
   }
 
   toggle() {
     const currentIsOpen = this.state.isOpen;
+
+    const animation = Animated.timing(this.state.rotate, {
+      toValue: 1,
+      duration: 500
+    });
+
+    animation.start(animation => {
+      if (animation.finished) {
+        this.setState({ rotate: new Animated.Value(0) });
+      }
+    });
 
     const animationCreate = {
       duration: 1000,
@@ -22,8 +40,9 @@ class CodeOfConductItem extends Component {
         springDamping: 0.7
       }
     };
+
     const animationRemove = {
-      duration: 100,
+      duration: 10,
       delete: {
         type: "linear",
         property: "opacity" // also scaleXY
@@ -43,7 +62,15 @@ class CodeOfConductItem extends Component {
   }
   render() {
     const { conduct } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, rotate } = this.state;
+    const deg = rotate.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0deg", "360deg"]
+    });
+
+    const animatedStyles = {
+      transform: [{ rotate: deg }]
+    };
 
     return (
       <View>
@@ -52,7 +79,10 @@ class CodeOfConductItem extends Component {
             this.toggle();
           }}
         >
-          <Text>+ {conduct.title}</Text>
+          <View>
+            <Animated.Text style={animatedStyles}>+</Animated.Text>
+            <Text>{conduct.title}</Text>
+          </View>
 
           {isOpen ? <Text>{conduct.description}</Text> : null}
         </TouchableOpacity>

@@ -27,7 +27,13 @@ const Session = ({
       <Text>{session.title}</Text>
       <Text>{moment(session.startTime).format("h:mm a")}</Text>
       <Text>{session.description}</Text>
-      <Text>{session.speaker.name}</Text>
+      <TouchableHighlight
+        onPress={() =>
+          navigation.navigate("Speaker", { speaker: session.speaker })
+        }
+      >
+        <Text>{session.speaker.name}</Text>
+      </TouchableHighlight>
     </View>
   );
 };
