@@ -1,3 +1,6 @@
 import { StyleSheet } from "react-native";
+import theme from "../../config/styles";
 
-export const styles = StyleSheet.create({});
+const styles = StyleSheet.create({});
+
+export default styles;

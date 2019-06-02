@@ -19,9 +19,7 @@ const SessionList = ({ sessions, faveIds }) => {
         )}
         sections={formatSessionData(sessions)}
         keyExtractor={item => item.id}
-        ItemSeparatorComponent={() => (
-          <View style={{ borderBottomColor: "#999", borderBottomWidth: 1 }} />
-        )}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
     </View>
   );
