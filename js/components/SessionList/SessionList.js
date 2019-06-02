@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { SectionList, Text, View } from "react-native";
 import moment from "moment";
-import { styles } from "./styles";
+import styles from "./styles";
 import SessionListItem from "../SessionListItem";
 import { formatSessionData } from "../../helpers";
 
@@ -10,7 +10,7 @@ const SessionList = ({ sessions, faveIds }) => {
     <View>
       <SectionList
         renderSectionHeader={({ section: { title } }) => (
-          <Text style={{ fontWeight: "bold" }}>
+          <Text style={styles.sectionHeader}>
             {moment(title).format("h:mm a")}
           </Text>
         )}
