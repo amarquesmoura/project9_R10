@@ -32,7 +32,7 @@ export const sharedNavigationOptions = navigation => ({
   headerLeft: Platform.select({
     android: (
       <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-        <Icon name="md-menu" size={25} color="white" />
+        <Icon name="md-menu" size={25} color="white" style={{ margin: 15 }} />
       </TouchableOpacity>
     )
   })

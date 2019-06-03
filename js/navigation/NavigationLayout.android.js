@@ -6,6 +6,8 @@ import SessionScreen from "../screens/Session";
 import FavesScreen from "../screens/Faves";
 import MapScreen from "../screens/Map";
 import { sharedNavigationOptions } from "./config";
+import theme from "../config/styles";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const MapStack = createStackNavigator(
   {
@@ -59,7 +61,40 @@ export default createDrawerNavigator(
     About: AboutStack
   },
   {
-    drawerWidth: 200,
-    drawerPosition: "left"
+    defaultNavigationOptions: ({ navigation }) => ({
+      drawerIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === "Schedule") {
+          iconName = `md-calendar`;
+        } else if (routeName === "About") {
+          iconName = `md-information-circle`;
+        } else if (routeName === "Faves") {
+          iconName = `md-heart`;
+        } else if (routeName === "Map") {
+          iconName = `md-map`;
+        }
+
+        // You can return any component that you like here!
+        return <IconComponent name={iconName} size={25} color={tintColor} />;
+      }
+    }),
+    drawerWidth: 150,
+    contentOptions: {
+      activeTintColor: theme.colors.purple,
+      inactiveTintColor: theme.colors.mediumGrey,
+      activeBackgroundColor: theme.colors.lightGrey,
+      labelStyle: {
+        fontSize: 16,
+        fontFamily: theme.fontRegular
+      },
+      itemsContainerStyle: {
+        margin: 0
+      },
+      iconContainerStyle: {
+        margin: 0
+      }
+    }
   }
 );
