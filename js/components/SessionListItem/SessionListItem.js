@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Platform, Text, TouchableHighlight, View } from "react-native";
+import { Platform, Text, TouchableOpacity, View } from "react-native";
 import styles from "./styles";
 import { withNavigation } from "react-navigation";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -11,7 +11,7 @@ const SessionListItem = ({ item, navigation, faveIds }) => {
   });
   return (
     <View>
-      <TouchableHighlight
+      <TouchableOpacity
         onPress={() =>
           navigation.navigate("Session", {
             id: item.id
@@ -27,7 +27,7 @@ const SessionListItem = ({ item, navigation, faveIds }) => {
             ) : null}
           </View>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     </View>
   );
 };

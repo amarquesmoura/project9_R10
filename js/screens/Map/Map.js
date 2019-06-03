@@ -5,7 +5,7 @@ import styles from "./styles";
 const Map = data => {
   return (
     <View style={styles.container}>
-      <Text>This is the Map screen...</Text>
+      <Text>Map feature is coming soon...</Text>
     </View>
   );
 };

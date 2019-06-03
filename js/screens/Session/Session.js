@@ -38,20 +38,24 @@ const Session = ({
           {moment(session.startTime).format("h:mm a")}
         </Text>
         <Text style={styles.description}>{session.description}</Text>
-        <Text style={styles.presented}>{"Presented by:"}</Text>
-        <TouchableHighlight
-          onPress={() =>
-            navigation.navigate("Speaker", { speaker: session.speaker })
-          }
-        >
-          <View style={styles.speakerContainer}>
-            <Image
-              style={styles.speakerPic}
-              source={{ uri: session.speaker.image }}
-            />
-            <Text style={styles.speaker}>{session.speaker.name}</Text>
+        {session.speaker ? (
+          <View>
+            <Text style={styles.presented}>{"Presented by:"}</Text>
+            <TouchableHighlight
+              onPress={() =>
+                navigation.navigate("Speaker", { speaker: session.speaker })
+              }
+            >
+              <View style={styles.speakerContainer}>
+                <Image
+                  style={styles.speakerPic}
+                  source={{ uri: session.speaker.image }}
+                />
+                <Text style={styles.speaker}>{session.speaker.name}</Text>
+              </View>
+            </TouchableHighlight>
           </View>
-        </TouchableHighlight>
+        ) : null}
       </View>
       <View style={styles.separator} />
       <View style={styles.buttonContainer}>
