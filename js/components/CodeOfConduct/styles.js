@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   conductContainer: {
-    padding: 20
+    padding: 5
   },
   conductDescription: {
-    fontFamily: theme.fontRegular,
-    fontSize: 16
+    fontFamily: theme.fontLight,
+    fontSize: 14
   }
 });
 

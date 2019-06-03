@@ -11,7 +11,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderBottomColor: theme.colors.lightGrey,
     borderBottomWidth: 1,
-    padding: 10,
+    paddingTop: 10,
+    paddingBottom: 20,
+    width: "100%"
+  },
+  info: {
+    padding: 0,
     width: "100%"
   },
   paragraph: {

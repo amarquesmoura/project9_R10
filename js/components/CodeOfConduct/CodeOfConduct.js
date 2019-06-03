@@ -89,8 +89,8 @@ class CodeOfConductItem extends Component {
             <Text style={styles.conductTitle}>{conduct.title}</Text>
           </View>
           {isOpen ? (
-            <View styles={styles.conductContainer}>
-              <Text styles={styles.conductDescription}>
+            <View style={styles.conductContainer}>
+              <Text style={styles.conductDescription}>
                 {conduct.description}
               </Text>
             </View>

@@ -4,11 +4,7 @@ import styles from "./styles";
 import SessionList from "../../components/SessionList";
 
 const Schedule = ({ sessions, faveIds }) => {
-  return (
-    <View style={styles.container}>
-      <SessionList sessions={sessions} faveIds={faveIds} />
-    </View>
-  );
+  return <SessionList sessions={sessions} faveIds={faveIds} />;
 };
 
 export default Schedule;
