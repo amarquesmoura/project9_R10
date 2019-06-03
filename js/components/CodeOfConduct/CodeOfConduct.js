@@ -6,8 +6,9 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import { styles } from "./styles";
+import styles from "./styles";
 import PropTypes from "prop-types";
+import theme from "../../config/styles";
 
 class CodeOfConductItem extends Component {
   constructor(props) {
@@ -69,7 +70,9 @@ class CodeOfConductItem extends Component {
     });
 
     const animatedStyles = {
-      transform: [{ rotate: deg }]
+      transform: [{ rotate: deg }],
+      color: theme.colors.purple,
+      padding: 5
     };
 
     return (
@@ -79,12 +82,19 @@ class CodeOfConductItem extends Component {
             this.toggle();
           }}
         >
-          <View>
-            <Animated.Text style={animatedStyles}>+</Animated.Text>
-            <Text>{conduct.title}</Text>
+          <View style={styles.conductHeading}>
+            <Animated.Text style={animatedStyles}>
+              {!isOpen ? "+" : "-"}
+            </Animated.Text>
+            <Text style={styles.conductTitle}>{conduct.title}</Text>
           </View>
-
-          {isOpen ? <Text>{conduct.description}</Text> : null}
+          {isOpen ? (
+            <View styles={styles.conductContainer}>
+              <Text styles={styles.conductDescription}>
+                {conduct.description}
+              </Text>
+            </View>
+          ) : null}
         </TouchableOpacity>
       </View>
     );
