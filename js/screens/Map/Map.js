@@ -1,13 +1,13 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { styles } from "./styles";
+import styles from "./styles";
 
-const Faves = data => {
+const Map = data => {
   return (
     <View style={styles.container}>
-      <Text>This is the Faves screen...</Text>
+      <Text>This is the Map screen...</Text>
     </View>
   );
 };
 
-export default Faves;
+export default Map;

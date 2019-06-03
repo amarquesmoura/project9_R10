@@ -8,8 +8,20 @@ import AboutScreen from "../screens/About";
 import ScheduleScreen from "../screens/Schedule";
 import SessionScreen from "../screens/Session";
 import FavesScreen from "../screens/Faves";
+import MapScreen from "../screens/Map";
 import { sharedNavigationOptions } from "./config";
 import theme from "../config/styles";
+
+const MapStack = createStackNavigator(
+  {
+    Map: MapScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+);
 
 const AboutStack = createStackNavigator(
   {
@@ -48,6 +60,7 @@ const FavesStack = createStackNavigator(
 export default createBottomTabNavigator(
   {
     Schedule: ScheduleStack,
+    Map: MapStack,
     Faves: FavesStack,
     About: AboutStack
   },
@@ -63,6 +76,8 @@ export default createBottomTabNavigator(
           iconName = `ios-information-circle`;
         } else if (routeName === "Faves") {
           iconName = `ios-heart`;
+        } else if (routeName === "Map") {
+          iconName = `ios-map`;
         }
 
         // You can return any component that you like here!
@@ -74,7 +89,7 @@ export default createBottomTabNavigator(
       inactiveTintColor: "#999",
       labelStyle: {
         fontSize: 10,
-        fontFamily: theme.themeFontFamily
+        fontFamily: theme.fontFamily
       },
       style: {
         backgroundColor: "black"
