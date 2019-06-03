@@ -38,9 +38,11 @@ class SessionContainer extends Component {
 const GET_SESSION_DETAILS = gql`
   query session($id: ID!) {
     Session(id: $id) {
+      id
       description
       location
       speaker {
+        id
         bio
         image
         name
