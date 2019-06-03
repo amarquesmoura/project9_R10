@@ -1,13 +1,10 @@
 import React from "react";
-import { Text, View } from "react-native";
-import { styles } from "./styles";
+import { View } from "react-native";
+import SessionList from "../../components/SessionList";
+import styles from "./styles";
 
-const Faves = data => {
-  return (
-    <View style={styles.container}>
-      <Text>This is the Faves screen...</Text>
-    </View>
-  );
+const Faves = ({ favedSessions, faveIds }) => {
+  return <SessionList sessions={favedSessions} faveIds={faveIds} />;
 };
 
 export default Faves;
