@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     color: "white",
-    fontFamily: theme.fontFamily,
+    fontFamily: theme.fontRegular,
     fontSize: 20
   },
   scrollView: {
@@ -40,11 +40,11 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
     fontWeight: "800",
-    fontFamily: theme.fontFamily
+    fontFamily: theme.fontRegular
   },
   bio: {
     fontSize: 16,
-    fontFamily: theme.fontFamily,
+    fontFamily: theme.fontRegular,
     padding: 15
   },
   button: {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   buttonText: {
-    fontFamily: "Montserrat",
+    fontFamily: theme.fontRegular,
     color: "white",
     fontSize: 15,
     padding: 10

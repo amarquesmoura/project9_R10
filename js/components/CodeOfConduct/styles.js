@@ -8,14 +8,14 @@ const styles = StyleSheet.create({
   },
   conductTitle: {
     color: theme.colors.purple,
-    fontFamily: theme.fontFamily,
+    fontFamily: theme.fontRegular,
     fontSize: 16
   },
   conductContainer: {
     padding: 20
   },
   conductDescription: {
-    fontFamily: theme.fontFamily,
+    fontFamily: theme.fontRegular,
     fontSize: 16
   }
 });

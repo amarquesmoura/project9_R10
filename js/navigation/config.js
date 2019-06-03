@@ -3,6 +3,7 @@ import { Platform, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Header } from "react-navigation";
 import LinearGradient from "react-native-linear-gradient";
 import Icon from "react-native-vector-icons/Ionicons";
+import theme from "../config/styles";
 
 const GradientHeader = props => (
   <View style={{ backgroundColor: "white", overflow: "hidden" }}>
@@ -25,7 +26,7 @@ export const sharedNavigationOptions = navigation => ({
   headerTintColor: "white",
   headerTitleStyle: {
     fontSize: 18,
-    fontFamily: "Montserrat",
+    fontFamily: theme.fontRegular,
     color: "white"
   },
   headerLeft: Platform.select({

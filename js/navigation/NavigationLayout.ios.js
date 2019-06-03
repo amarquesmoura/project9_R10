@@ -89,7 +89,7 @@ export default createBottomTabNavigator(
       inactiveTintColor: "#999",
       labelStyle: {
         fontSize: 10,
-        fontFamily: theme.fontFamily
+        fontFamily: theme.fontRegular
       },
       style: {
         backgroundColor: "black"

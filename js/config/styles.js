@@ -14,7 +14,8 @@ const theme = {
     purple: "#9963ea",
     red: "#cf392a"
   },
-  fontFamily: Platform.OS === "android" ? "Montserrat-Regular" : "Montserrat"
+  fontRegular: Platform.OS === "android" ? "Montserrat-Regular" : "Montserrat",
+  fontLight: "Montserrat-Light"
 };
 
 export default theme;

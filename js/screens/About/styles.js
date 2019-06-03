@@ -11,18 +11,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderBottomColor: theme.colors.lightGrey,
     borderBottomWidth: 1,
-    padding: 20,
+    padding: 10,
     width: "100%"
   },
   paragraph: {
-    fontSize: 16,
+    fontFamily: theme.fontLight,
+    fontSize: 14,
     paddingTop: 20,
     paddingBottom: 20
   },
   heading: {
-    fontSize: 24
+    fontFamily: theme.fontRegular,
+    fontSize: 24,
+    paddingBottom: 5
   },
   conduct: {
+    fontFamily: theme.fontLight,
     flexDirection: "row",
     paddingTop: 20,
     paddingBottom: 20
@@ -41,6 +45,7 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   copyright: {
+    fontFamily: theme.fontLight,
     color: "black"
   }
 });
