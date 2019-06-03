@@ -21,7 +21,6 @@ const xIcon = Platform.select({
 });
 
 const Speaker = ({ speaker, navigation }) => {
-  console.log("speaker", speaker);
   return (
     <View style={styles.modalContainer}>
       <TouchableHighlight

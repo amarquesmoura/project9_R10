@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ActivityIndicator, AppRegistry, View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 import styles from "./styles";
 
 class Loader extends Component {

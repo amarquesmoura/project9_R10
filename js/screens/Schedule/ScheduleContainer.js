@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Text } from "react-native";
 import Schedule from "./Schedule";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";

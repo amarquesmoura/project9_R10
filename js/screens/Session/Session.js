@@ -1,7 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import {
   Image,
-  StyleSheet,
   Platform,
   Text,
   TouchableHighlight,
@@ -59,7 +58,6 @@ const Session = ({
       </View>
       <View style={styles.separator} />
       <View style={styles.buttonContainer}>
-        {console.log(faveIds.includes(session.id))}
         {faveIds.includes(session.id) ? (
           <LinearGradient
             colors={["#9963ea", "#cf392a"]}

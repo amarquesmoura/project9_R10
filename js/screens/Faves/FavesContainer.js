@@ -3,7 +3,6 @@ import Faves from "./Faves";
 import FavesContext from "../../context/FavesContext";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-import { formatSessionData } from "../../helpers";
 import Loader from "../../components/Loader";
 
 class FavesContainer extends Component {
@@ -21,7 +20,6 @@ class FavesContainer extends Component {
                 const favedSessions = data.allSessions.filter(session => {
                   return faveIds.includes(session.id);
                 });
-                console.log("faved", favedSessions);
 
                 return (
                   <Faves favedSessions={favedSessions} faveIds={faveIds} />

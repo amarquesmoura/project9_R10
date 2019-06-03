@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Image, LayoutAnimation, Text, View } from "react-native";
 import styles from "./styles";
 import CodeOfConduct from "../../components/CodeOfConduct";
 import { ScrollView } from "react-native-gesture-handler";
 
 const About = ({ data }) => {
-  console.log("allConducts", data.allConducts);
   return (
     <ScrollView>
       <View style={styles.container}>

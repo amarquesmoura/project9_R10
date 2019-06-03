@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Session from "./Session";
 import { Query } from "react-apollo";
-import { Text } from "react-native";
-import { formatSessionData } from "../../helpers";
 import gql from "graphql-tag";
 import FavesContext from "../../context/FavesContext";
 import Loader from "../../components/Loader";

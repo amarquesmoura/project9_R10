@@ -56,7 +56,6 @@ class CodeOfConductItem extends Component {
       LayoutAnimation.configureNext(animationCreate);
     }
 
-    // LayoutAnimation.easeInEaseOut();
     this.setState({
       isOpen: !currentIsOpen
     });
