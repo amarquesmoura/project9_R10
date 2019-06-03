@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import {
   Image,
-  LinearGradient,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -11,6 +10,8 @@ import {
 import styles from "./styles";
 import moment from "moment";
 import { ScrollView } from "react-native-gesture-handler";
+import LinearGradient from "react-native-linear-gradient";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Session = ({
   session,
@@ -19,15 +20,13 @@ const Session = ({
   addFaveSession,
   removeFaveSession
 }) => {
-  console.log("Session", session);
-  console.log("FaveIds", faveIds);
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.locationAndFaveContainer}>
           <Text style={styles.location}>{session.location}</Text>
           {faveIds.includes(session.id) ? (
-            <Ionicons name={heart} size={20} color="red" />
+            <Icon name={heart} size={20} color="red" />
           ) : null}
         </View>
         <Text style={styles.title}>{session.title}</Text>
@@ -57,28 +56,28 @@ const Session = ({
             style={styles.button}
             onPress={() => removeFaveSession(session.id)}
           >
-            {/* <LinearGradient
+            <LinearGradient
               colors={["#9963ea", "#cf392a"]}
               start={{ x: 0.0, y: 0.5 }}
               end={{ x: 0.5, y: 0.0 }}
               style={[StyleSheet.absoluteFill, styles.btn]}
-            > */}
-            <Text style={styles.buttonText}>Remove from Favs</Text>
-            {/* </LinearGradient> */}
+            >
+              <Text style={styles.buttonText}>Remove from Favs</Text>
+            </LinearGradient>
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
             style={styles.button}
             onPress={() => addFaveSession(session.id)}
           >
-            {/* <LinearGradient
+            <LinearGradient
               colors={["#9963ea", "#cf392a"]}
               start={{ x: 0.0, y: 0.5 }}
               end={{ x: 0.5, y: 0.0 }}
               style={[StyleSheet.absoluteFill, styles.btn]}
-            > */}
-            <Text style={styles.buttonText}>Add from Favs</Text>
-            {/* </LinearGradient> */}
+            >
+              <Text style={styles.buttonText}>Add from Favs</Text>
+            </LinearGradient>
           </TouchableOpacity>
         )}
       </View>
