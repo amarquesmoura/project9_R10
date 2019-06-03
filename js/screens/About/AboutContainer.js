@@ -3,6 +3,7 @@ import About from "./About";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { Text } from "react-native";
+import Loader from "../../components/Loader";
 
 class AboutContainer extends Component {
   static navigationOptions = {
@@ -12,7 +13,7 @@ class AboutContainer extends Component {
     return (
       <Query query={GET_CONDUCT_ITEMS}>
         {({ loading, data }) => {
-          if (loading || !data) return <Text>Loading...</Text>; // replace by Loader component
+          if (loading || !data) return <Loader />;
           return <About data={data} />;
         }}
       </Query>

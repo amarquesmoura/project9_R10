@@ -4,6 +4,7 @@ import Schedule from "./Schedule";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import FavesContext from "../../context/FavesContext";
+import Loader from "../../components/Loader";
 
 class ScheduleContainer extends Component {
   static navigationOptions = {
@@ -15,7 +16,7 @@ class ScheduleContainer extends Component {
         {({ faveIds }) => (
           <Query query={GET_SESSION_ITEMS}>
             {({ loading, error, data }) => {
-              if (loading || !data) return <Text>Loading...</Text>; // replace by Loader component
+              if (loading || !data) return <Loader />;
               if (data) {
                 return (
                   <Schedule sessions={data.allSessions} faveIds={faveIds} />

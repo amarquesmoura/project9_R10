@@ -5,6 +5,7 @@ import { Text } from "react-native";
 import { formatSessionData } from "../../helpers";
 import gql from "graphql-tag";
 import FavesContext from "../../context/FavesContext";
+import Loader from "../../components/Loader";
 
 class SessionContainer extends Component {
   static navigationOptions = {
@@ -17,7 +18,7 @@ class SessionContainer extends Component {
         {({ faveIds, addFaveSession, removeFaveSession }) => (
           <Query variables={{ id }} query={GET_SESSION_DETAILS}>
             {({ loading, data }) => {
-              if (loading || !data) return <Text>Loading...</Text>; // replace by Loader component
+              if (loading || !data) return <Loader />;
               return (
                 <Session
                   session={data.Session}
