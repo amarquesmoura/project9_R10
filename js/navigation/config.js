@@ -28,9 +28,11 @@ export const sharedNavigationOptions = navigation => ({
     fontFamily: "Montserrat",
     color: "white"
   },
-  headerLeft: (
-    <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-      <Icon name="md-menu" size={25} color="white" />
-    </TouchableOpacity>
-  )
+  headerLeft: Platform.select({
+    android: (
+      <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+        <Icon name="md-menu" size={25} color="white" />
+      </TouchableOpacity>
+    )
+  })
 });

@@ -6,7 +6,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 const SessionListItem = ({ item, navigation, faveIds }) => {
   const heart = Platform.select({
-    ios: " ios-heart",
+    ios: "ios-heart",
     android: "md-heart"
   });
   return (
@@ -20,7 +20,7 @@ const SessionListItem = ({ item, navigation, faveIds }) => {
       >
         <View key={item.id}>
           <Text style={styles.title}>{item.title}</Text>
-          <View style={styles.locationAndFaveContainer}>
+          <View style={styles.locationAn0dFaveContainer}>
             <Text style={styles.location}>{item.location}</Text>
             {faveIds.includes(item.id) ? (
               <Ionicons name={heart} size={20} color="red" />

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import {
   Image,
   StyleSheet,
+  Platform,
   Text,
   TouchableHighlight,
   TouchableOpacity,
@@ -12,7 +13,6 @@ import moment from "moment";
 import { ScrollView } from "react-native-gesture-handler";
 import LinearGradient from "react-native-linear-gradient";
 import Icon from "react-native-vector-icons/Ionicons";
-
 const Session = ({
   session,
   navigation,
@@ -26,7 +26,11 @@ const Session = ({
         <View style={styles.locationAndFaveContainer}>
           <Text style={styles.location}>{session.location}</Text>
           {faveIds.includes(session.id) ? (
-            <Icon name={heart} size={20} color="red" />
+            <Icon
+              name={Platform.OS === "ios" ? "ios-heart" : "md-heart"}
+              size={20}
+              color="red"
+            />
           ) : null}
         </View>
         <Text style={styles.title}>{session.title}</Text>
@@ -51,34 +55,35 @@ const Session = ({
       </View>
       <View style={styles.separator} />
       <View style={styles.buttonContainer}>
+        {console.log(faveIds.includes(session.id))}
         {faveIds.includes(session.id) ? (
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => removeFaveSession(session.id)}
+          <LinearGradient
+            colors={["#9963ea", "#cf392a"]}
+            start={{ x: 0.0, y: 0.5 }}
+            end={{ x: 0.5, y: 0.0 }}
+            // style={[StyleSheet.absoluteFill, styles.btn]}
           >
-            <LinearGradient
-              colors={["#9963ea", "#cf392a"]}
-              start={{ x: 0.0, y: 0.5 }}
-              end={{ x: 0.5, y: 0.0 }}
-              style={[StyleSheet.absoluteFill, styles.btn]}
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => removeFaveSession(session.id)}
             >
               <Text style={styles.buttonText}>Remove from Favs</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </LinearGradient>
         ) : (
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => addFaveSession(session.id)}
+          <LinearGradient
+            colors={["#9963ea", "#cf392a"]}
+            start={{ x: 0.0, y: 0.5 }}
+            end={{ x: 0.5, y: 0.0 }}
+            // style={[StyleSheet.absoluteFill]}
           >
-            <LinearGradient
-              colors={["#9963ea", "#cf392a"]}
-              start={{ x: 0.0, y: 0.5 }}
-              end={{ x: 0.5, y: 0.0 }}
-              style={[StyleSheet.absoluteFill, styles.btn]}
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => addFaveSession(session.id)}
             >
               <Text style={styles.buttonText}>Add from Favs</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </LinearGradient>
         )}
       </View>
     </ScrollView>

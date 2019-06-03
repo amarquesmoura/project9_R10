@@ -21,11 +21,9 @@ export const queryFaves = async () => {
 };
 
 export const removeFave = async id => {
-  removeValue = async () => {
-    try {
-      await AsyncStorage.removeItem(`${id}`);
-    } catch (e) {
-      return false;
-    }
-  };
+  try {
+    await AsyncStorage.removeItem(`${id}`);
+  } catch (e) {
+    return false;
+  }
 };
