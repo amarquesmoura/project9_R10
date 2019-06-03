@@ -26,6 +26,22 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingTop: 20,
     paddingBottom: 20
+  },
+  separator: {
+    flex: 1,
+    height: 1,
+    backgroundColor: theme.colors.lightGrey,
+    marginTop: 20,
+    marginBottom: 20,
+    width: "100%"
+  },
+  copyrightContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    width: "100%"
+  },
+  copyright: {
+    color: "black"
   }
 });
 
