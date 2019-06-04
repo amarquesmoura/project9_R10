@@ -3,19 +3,20 @@ import theme from "../../config/styles";
 
 const styles = StyleSheet.create({
   title: {
-    paddingTop: 5,
-    paddingBottom: 5
+    padding: 5,
+    fontFamily: theme.fontRegular
   },
   locationAndFaveContainer: {
     ...theme.container,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "flex-end"
+    alignItems: "flex-end",
+    paddingRight: 5
   },
   location: {
-    paddingTop: 5,
-    paddingBottom: 5,
-    color: theme.colors.mediumGrey
+    padding: 5,
+    color: theme.colors.mediumGrey,
+    fontFamily: theme.fontRegular
   }
 });
 

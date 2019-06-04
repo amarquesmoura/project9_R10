@@ -20,7 +20,7 @@ const SessionListItem = ({ item, navigation, faveIds }) => {
       >
         <View key={item.id}>
           <Text style={styles.title}>{item.title}</Text>
-          <View style={styles.locationAn0dFaveContainer}>
+          <View style={styles.locationAndFaveContainer}>
             <Text style={styles.location}>{item.location}</Text>
             {faveIds.includes(item.id) ? (
               <Icon name={heart} size={20} color="red" />

@@ -11,7 +11,7 @@ const SessionList = ({ sessions, faveIds }) => {
       <SectionList
         renderSectionHeader={({ section: { title } }) => (
           <Text style={styles.sectionHeader}>
-            {moment(title).format("h:mm a")}
+            {moment(title).format("h:mm A")}
           </Text>
         )}
         renderItem={({ item }) => (
@@ -21,6 +21,7 @@ const SessionList = ({ sessions, faveIds }) => {
         keyExtractor={item => item.id}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
+      <View style={styles.separator} />
     </View>
   );
 };

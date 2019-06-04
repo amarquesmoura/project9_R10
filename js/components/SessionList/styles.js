@@ -6,12 +6,12 @@ const styles = StyleSheet.create({
     ...theme.container
   },
   sectionHeader: {
-    paddingTop: 5,
-    paddingBottom: 5,
-    backgroundColor: theme.colors.lightGrey
+    padding: 5,
+    backgroundColor: theme.colors.lightGrey,
+    fontFamily: theme.fontRegular
   },
   separator: {
-    borderBottomColor: "#999",
+    borderBottomColor: theme.colors.lightGrey,
     borderBottomWidth: 1
   }
 });

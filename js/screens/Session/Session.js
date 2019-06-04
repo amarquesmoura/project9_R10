@@ -8,6 +8,7 @@ import {
   View
 } from "react-native";
 import styles from "./styles";
+import theme from "../../config/styles";
 import moment from "moment";
 import { ScrollView } from "react-native-gesture-handler";
 import LinearGradient from "react-native-linear-gradient";
@@ -34,7 +35,7 @@ const Session = ({
         </View>
         <Text style={styles.title}>{session.title}</Text>
         <Text style={styles.time}>
-          {moment(session.startTime).format("h:mm a")}
+          {moment(session.startTime).format("h:mm A")}
         </Text>
         <Text style={styles.description}>{session.description}</Text>
         {session.speaker ? (
@@ -60,30 +61,30 @@ const Session = ({
       <View style={styles.buttonContainer}>
         {faveIds.includes(session.id) ? (
           <LinearGradient
-            colors={["#9963ea", "#cf392a"]}
+            colors={[theme.colors.purple, theme.colors.blue]}
             start={{ x: 0.0, y: 0.5 }}
             end={{ x: 0.5, y: 0.0 }}
-            // style={[StyleSheet.absoluteFill, styles.btn]}
+            style={styles.gradient}
           >
             <TouchableOpacity
               style={styles.button}
               onPress={() => removeFaveSession(session.id)}
             >
-              <Text style={styles.buttonText}>Remove from Favs</Text>
+              <Text style={styles.buttonLabel}>Remove from Faves</Text>
             </TouchableOpacity>
           </LinearGradient>
         ) : (
           <LinearGradient
-            colors={["#9963ea", "#cf392a"]}
+            colors={[theme.colors.purple, theme.colors.blue]}
             start={{ x: 0.0, y: 0.5 }}
             end={{ x: 0.5, y: 0.0 }}
-            // style={[StyleSheet.absoluteFill]}
+            style={styles.gradient}
           >
             <TouchableOpacity
               style={styles.button}
               onPress={() => addFaveSession(session.id)}
             >
-              <Text style={styles.buttonText}>Add from Favs</Text>
+              <Text style={styles.buttonLabel}>Add to Faves</Text>
             </TouchableOpacity>
           </LinearGradient>
         )}
