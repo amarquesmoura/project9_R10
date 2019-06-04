@@ -19,17 +19,17 @@ const Session = ({
   addFaveSession,
   removeFaveSession
 }) => {
+  const heart = Platform.select({
+    ios: "ios-heart",
+    android: "md-heart"
+  });
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.locationAndFaveContainer}>
           <Text style={styles.location}>{session.location}</Text>
           {faveIds.includes(session.id) ? (
-            <Icon
-              name={Platform.OS === "ios" ? "ios-heart" : "md-heart"}
-              size={20}
-              color="red"
-            />
+            <Icon name={heart} size={20} color="red" />
           ) : null}
         </View>
         <Text style={styles.title}>{session.title}</Text>

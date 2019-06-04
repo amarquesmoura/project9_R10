@@ -5,7 +5,7 @@ import styles from "./styles";
 const Map = data => {
   return (
     <View style={styles.container}>
-      <Text>Map feature is coming soon...</Text>
+      <Text style={styles.message}>Map feature is coming soon...</Text>
     </View>
   );
 };
