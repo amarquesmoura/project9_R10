@@ -10,7 +10,7 @@ This is a cross-platform mobile app project at RED Academy App Developer Program
 
 ## About the Author
 
-Andre Moura an experienced Product Manager working in the Tech Industry. He was the project manager, focusing on the value proposition, quality and delivery. You can connect with him on LinkedIn [here](https://www.linkedin.com/in/andre-marques-moura).
+I am an experienced Product Manager working in the Tech Industry. He was the project manager, focusing on the value proposition, quality and delivery. You can connect with me on LinkedIn [here](https://www.linkedin.com/in/andre-marques-moura).
 
 ## Main Takeaways
 
