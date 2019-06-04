@@ -4,12 +4,9 @@ This is a cross-platform mobile app project at RED Academy App Developer Program
 
 ## App Screenshots
 
-<div style="border: 1px; boarder-color: #000000">
 ![Schedule Screen](/public/screenshots/schedule_screen.png =320x568)
-</div>
-<div style="border: 1px; boarder-color: #000000">
+
 ![Session Screen](/public/screenshots/session_screen.png =320x568)
-</div>
 
 ## About the Author
 
