@@ -13,6 +13,8 @@ import moment from "moment";
 import { ScrollView } from "react-native-gesture-handler";
 import LinearGradient from "react-native-linear-gradient";
 import Icon from "react-native-vector-icons/Ionicons";
+import PropTypes from "prop-types";
+
 const Session = ({
   session,
   navigation,
@@ -91,6 +93,12 @@ const Session = ({
       </View>
     </ScrollView>
   );
+};
+
+Session.propTypes = {
+  session: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.array.isRequired
 };
 
 export default Session;

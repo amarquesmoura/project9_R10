@@ -4,6 +4,7 @@ import { Header } from "react-navigation";
 import LinearGradient from "react-native-linear-gradient";
 import Icon from "react-native-vector-icons/Ionicons";
 import theme from "../config/styles";
+import PropTypes from "prop-types";
 
 const GradientHeader = props => (
   <View style={{ backgroundColor: "white", overflow: "hidden" }}>
@@ -37,3 +38,8 @@ export const sharedNavigationOptions = navigation => ({
     )
   })
 });
+
+GradientHeader.propTypes = {
+  props: PropTypes.object,
+  navigation: PropTypes.object.isRequired
+};

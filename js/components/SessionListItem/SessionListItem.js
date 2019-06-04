@@ -3,6 +3,7 @@ import { Platform, Text, TouchableOpacity, View } from "react-native";
 import styles from "./styles";
 import { withNavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
+import PropTypes from "prop-types";
 
 const SessionListItem = ({ item, navigation, faveIds }) => {
   const heart = Platform.select({
@@ -30,6 +31,12 @@ const SessionListItem = ({ item, navigation, faveIds }) => {
       </TouchableOpacity>
     </View>
   );
+};
+
+SessionListItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.array.isRequired
 };
 
 export default withNavigation(SessionListItem);

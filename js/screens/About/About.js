@@ -3,6 +3,7 @@ import { Image, LayoutAnimation, Text, View } from "react-native";
 import styles from "./styles";
 import CodeOfConduct from "../../components/CodeOfConduct";
 import { ScrollView } from "react-native-gesture-handler";
+import PropTypes from "prop-types";
 
 const About = ({ data }) => {
   return (
@@ -37,6 +38,10 @@ const About = ({ data }) => {
       </View>
     </ScrollView>
   );
+};
+
+About.propTypes = {
+  data: PropTypes.object.isRequired
 };
 
 export default About;

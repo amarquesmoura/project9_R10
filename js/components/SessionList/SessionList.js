@@ -4,6 +4,7 @@ import moment from "moment";
 import styles from "./styles";
 import SessionListItem from "../SessionListItem";
 import { formatSessionData } from "../../helpers";
+import PropTypes from "prop-types";
 
 const SessionList = ({ sessions, faveIds }) => {
   return (
@@ -24,6 +25,11 @@ const SessionList = ({ sessions, faveIds }) => {
       <View style={styles.separator} />
     </View>
   );
+};
+
+SessionList.propTypes = {
+  session: PropTypes.array,
+  faveIds: PropTypes.array.isRequired
 };
 
 export default SessionList;
